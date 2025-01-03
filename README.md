@@ -13,5 +13,7 @@
 <br>
 
 ## **Notice⚠️**
-- 混合模式的多种类型样式详见[MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode)
-- 效果主体不一定是文字，也可以是盒子元素或者图片，但是效果逻辑都是一样的
+- 注意HTML文件要用VSCode或其他IDE工具打开，json文件本地解析会出错
+- 更多有关Lottie.js的功能请参考[代码文档](http://airbnb.io/lottie/#/web)
+- 一定要注意Lottie.js的兼容AE属性，这个在制作动画前就应该确定，详细请参考[兼容表](http://airbnb.io/lottie/#/supported-features)
+- bodymovin压缩包里面有详细的插件安装流程
