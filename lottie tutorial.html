@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lottie.js"></script>
+    <title>lottie tutorial</title>
+    <style>
+        * {
+            font-size: 2vmin;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #f7f7f7;
+            overflow: hidden;
+        }
+
+        #container {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #171717;
+        }
+
+        .container_hidden {
+            transform: translateY(100%);
+            visibility: hidden;
+            transition: 0.8s ease;
+        }
+
+        #animation_box {
+            position: relative;
+            width: 50rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="animation_box"></div>
+    </div>
+</body>
+<script>
+    // JIEJOE produce
+    // b站主页：https://space.bilibili.com/3546390319860710
+    let ani = lottie.loadAnimation({
+        container: document.getElementById("animation_box"),
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        path: 'welcome.json'
+    });
+    // let frame = 0;
+    // window.addEventListener("wheel", () => {
+    //     if (event.wheelDelta < 0) { frame += 20 }
+    //     else { frame -= 20 }
+    //     ani.goToAndStop(frame);
+    // })
+    let readystate = 0;
+    setTimeout(() => { readystate = 1; }, 5000);
+    ani.addEventListener("enterFrame", () => {
+        if (ani.currentFrame >= 65) {
+            if (readystate != 1) { ani.goToAndPlay(0); }
+        }
+    });
+    ani.addEventListener("complete", () => {
+        document.getElementById("container").classList.add("container_hidden");
+    })
+</script>
+
+</html>
